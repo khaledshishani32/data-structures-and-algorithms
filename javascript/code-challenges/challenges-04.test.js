@@ -23,6 +23,11 @@ function lower(str) {
 
 const updateAnimal = (arr, callback) => {
   // Solution code here...
+  const newArr=[];
+  arr.map(array =>{
+    return  newArr.push(callback(array))
+  })
+  return newArr;
 
 };
 
@@ -36,7 +41,8 @@ For example: 'Cat' would come before 'apple'
 
 const sortNames = (arr) => {
   // Solution code here...
-  arr.sort();
+  const newArr=arr.sort();
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -50,7 +56,12 @@ HINT: Beware... JS default is "Lexical" ordering.
 const sortNumbers = (arr) => {
   // Solution code here...
 
-  arr.sort((a, b) =>{return a - b});
+  const newArr= arr.sort((a,b)=>{
+    return a- b ;
+  })
+
+  return newArr;
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -63,6 +74,12 @@ HINT: Do it with a custom sort callback, not with using `.reverse()`. ;)
 
 const sortBackwards = (arr) => {
   // Solution code here...
+
+  const newArr= arr.sort((a,b)=>{
+    return  b - a ;
+  })
+
+  return newArr ;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -77,6 +94,10 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 
 const alphabetize = (arr) => {
   // Solution code here...
+  const newArr= arr.sort()
+
+  return newArr
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -95,9 +116,12 @@ Here is an example of the input:
 const sortByPrice = (arr) => {
   // Solution code here...
 
-  arr.sort((a , b) =>{
-   return a.price - b.price;
-  });
+ 
+  let newArr=arr.sort((a , b )=>{
+    return a.price - b.price;
+  })
+
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
