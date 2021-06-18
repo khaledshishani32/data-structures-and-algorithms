@@ -24,9 +24,17 @@ Returns: ['dyoll', 'eimaj'];
 
 const getNames = (arr) => {
   // Solution code here...
-  let newArr = arr.map(value =>{
-    return value.name
-  })
+  const newArr=[];
+ let temp;
+
+ arr.map((value , ind)=>{
+  
+  temp=(value.name).split("").reverse().join(""); 
+ 
+   newArr.push(temp);
+ })
+ 
+ return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -39,17 +47,20 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 const appendTheEnd = (str) => {
   // Solution code here...
 
-  str1= str;
-  str1 +="The end."
+  const addString=" The end.";
+  str+=addString;
   return str;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
+
 Write a function that accepts an array and copies the first element to the end of the array. The change should be reflected in the source array that was passed in to the function. That is, the function should modify the array 'in place'.
 
+
 Do not use a return statement.
+
 
 For example:
 const a = [1, 2, 3];
@@ -59,6 +70,12 @@ console.log(a) prints [1, 2, 3, 1]
 
 const appendFirstToLast = (arr) => {
   // Solution code here...
+  const newArr=arr;
+
+ newArr.push(arr[arr.length - arr.length]);
+
+ return newArr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -78,6 +95,9 @@ console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 
 const addBirthYearProperty = (obj, year) => {
   // Solution code here...
+  const newObj = obj ;
+
+  newObj.yearBorn=year;
 };
 
 /* ------------------------------------------------------------------------------------------------
