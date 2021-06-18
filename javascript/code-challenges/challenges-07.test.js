@@ -26,6 +26,11 @@ let starWarsPeople = [
 
 const sortStarWarsCharacters = (starWarsArr) => {
   // Solution code here...
+  const newArr=starWarsArr.sort((a , b)=>{
+    return   b.height - a.height ;
+  })
+
+ return newArr;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -60,24 +65,24 @@ Write a function named howMuchPencil that takes in a string, as written on the s
 
 As you sharpen the pencil, the string will become shorter and shorter, starting by removing the first letter.
 
-Your function should use slice within a loop and return an array of each successive string result from losing letters to the sharpener, until nothing is left.
+Your function should use slice within a loop and return an array of each successive string newArr from losing letters to the sharpener, until nothing is left.
 
 For example, if the input is 'Welcome', the output will be:
 ['Welcome', 'elcome', 'lcome', 'come', 'ome', 'me', 'e', ''].
 ------------------------------------------------------------------------------------------------ */
 
 const howMuchPencil = (str) => {
-  let result = [];
+  let newArr = [];
   // Solution code here...
 
   for(let i = 0 ; i< str.length +1 ; i++){
       
     let temp;
     temp =str.slice(i);
-    result.push(temp);
+    newArr.push(temp);
   }
   
-  return result;
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -102,7 +107,7 @@ You are making a grocery list for ingredients needed in the gruffalo crumble rec
 
 Write a function named listFoods that takes in the recipe and returns a new array of the food items without any amount or units. Just the name. For example, '1 cup flour' will return 'flour'.
 
-Use slice for this function, maybe more than once. The Array.indexOf() method may also be helpful.
+Use    for this function, maybe more than once. The Array.indexOf() method may also be helpful.
 
 Do not use split for this function.
 ------------------------------------------------------------------------------------------------ */
@@ -137,9 +142,15 @@ const gruffaloCrumble = {
 
 
 const listFoods = (recipe) => {
-  let result = [];
+  
   // Solution code here...
-  return result;
+
+  let newArr = [];
+  // Solution code here...
+  recipe.ingredients.map(value =>
+     newArr.push(value.slice(value.indexOf(' ', value.indexOf(' ') + 1) + 1)));
+
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -151,9 +162,9 @@ You may also use other string or array methods.
 ------------------------------------------------------------------------------------------------ */
 
 const splitFoods = (recipe) => {
-  let result = [];
+  let newArr = [];
   // Solution code here...
-  return result;
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -167,9 +178,9 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 ------------------------------------------------------------------------------------------------ */
 
 const stepActions = (recipe) => {
-  let result = [];
+  let newArr = [];
   // Solution code here...
-  return result;
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -192,7 +203,7 @@ const removeEvenValues = (arr) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
 
-Write a function named removeLastCharacters that takes in a string and a number. The numberOfCharacters argument determines how many characters will be removed from the end of the string. Return the resulting string.
+Write a function named removeLastCharacters that takes in a string and a number. The numberOfCharacters argument determines how many characters will be removed from the end of the string. Return the newArring string.
 
 If the numberOfCharacters argument is greater than the length of the input string, the function should return an empty string.
 
